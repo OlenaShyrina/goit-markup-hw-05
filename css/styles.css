@@ -13,6 +13,7 @@ html {
   --main-background-color: #ffffff;
   --accent-color: #2196f3;
   --basic-white: #ffffff;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -114,6 +115,10 @@ nav {
   display: block;
   padding-top: 32px;
   padding-bottom: 31px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .site-nav .link:hover,
@@ -124,6 +129,14 @@ nav {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+
+/* .site-nav .item::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+} */
 
 /* Contacts */
 
@@ -145,6 +158,10 @@ nav {
   letter-spacing: 0.02em;
   color: #757575;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .contacts .contact:hover,
@@ -155,21 +172,29 @@ nav {
 .icon-envelope {
   fill: currentColor;
   margin-right: 10px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .icon-enlope:hover,
 .icon-enlope:focus {
-  column-fill: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .icon-smartphone {
   fill: currentColor;
   margin-right: 10px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .icon-smartphone:hover,
 .icon-smartphone:focus {
-  column-fill: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 /* Body index */
@@ -227,6 +252,10 @@ nav {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 4px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .button:hover {
@@ -294,6 +323,27 @@ nav {
   gap: 30px;
 }
 
+.wedo-card {
+  position: relative;
+}
+
+.wedo .label {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--basic-white);
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* Section Our team */
 
 .section.team {
@@ -313,7 +363,9 @@ nav {
   width: 270px;
   padding-top: 30px;
   padding-bottom: 30px;
+
   text-align: center;
+
   background-color: var(--basic-white);
 }
 
@@ -352,6 +404,8 @@ nav {
   padding: 12px;
   color: #afb1b8;
   border-radius: 50%;
+
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
 }
 
 .socials .link:hover,
@@ -386,6 +440,8 @@ nav {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: fill 250ms var(--cubic), border 250ms var(--cubic);
 }
 
 .client-link:hover,
@@ -415,6 +471,9 @@ nav {
   background-color: #f5f4fa;
   border: none;
   border-radius: 4px;
+
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic),
+    box-shadow 250ms var(--cubic);
 }
 
 .filters .filter:hover,
@@ -447,6 +506,8 @@ nav {
   margin-right: 30px;
   margin-bottom: 30px;
   cursor: pointer;
+
+  transition: box-shadow 250ms var(--cubic);
 }
 
 .works.list .item:nth-child(3n) {
@@ -457,7 +518,8 @@ nav {
   margin-bottom: 0;
 }
 
-.works.list .item:hover {
+.works.list .item:hover,
+.works.list .item:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -483,6 +545,37 @@ nav {
 .type {
   font-size: 16px;
   line-height: 1.88;
+}
+
+.card {
+  position: relative;
+}
+
+.card::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+
+.descr {
+  position: absolute;
+  left: 24px;
+  top: 63px;
+
+  width: 322px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--basic-white);
+
+  opacity: 0;
 }
 
 /* Footer */
@@ -517,6 +610,8 @@ nav {
   font-style: normal;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+
+  transition: color 250ms var(--cubic);
 }
 
 .footer-contacts .contact-down:hover,
@@ -540,6 +635,8 @@ nav {
 .socials .footer-link {
   color: var(--basic-white);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .socials.footer .link:hover,
