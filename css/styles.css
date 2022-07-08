@@ -693,6 +693,10 @@ img {
   border-radius: 50%;
 }
 
+.modal-btn:hover {
+  cursor: pointer;
+}
+
 /* Footer */
 
 .footer {
